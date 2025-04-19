@@ -1,14 +1,12 @@
 name: Create AWS ECS
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 env:
-  APP_NAME: proj-aws-ecs-cicd
-  ECR_S3_REPO: proj-aws-ecs-cicd-s3-ecr
-  ECR_SQS_REPO: proj-aws-ecs-cicd-sqs-ecr
+  APP_NAME: LH-ecs-cicd
+  ECR_S3_REPO: LH-ecs-cicd-s3-ecr
+  ECR_SQS_REPO: LH-ecs-cicd-sqs-ecr
 
 jobs:
   get-tag:
@@ -32,7 +30,6 @@ jobs:
         run: echo "The latest tag is ${{ steps.get_latest_tag.outputs.LATEST_TAG }}"
 
   create-ecs:
-    needs: [docker-s3-checks, docker-sqs-checks]
     runs-on: ubuntu-latest
     name: Create ECS
     outputs:
