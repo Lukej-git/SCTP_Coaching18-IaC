@@ -7,8 +7,8 @@ on:
       - main
 
 env:
-  APP_NAME: proj-aws-ecs-cicd
-  ECR_REPO: proj-aws-ecs-cicd-ecr-repo
+  APP_NAME: LH-ecs-cicd
+  ECR_REPO: LH-ecs-cicd-ecr-repo
 
 jobs:
   Initial-Checks:

@@ -13,7 +13,7 @@ module "vpc" {
   tags = {
     Terraform = "true"
     Environment = "prod"
-    Created_by = "LH"
+    Created_by = "lh"
   }
 }
 
